@@ -28,8 +28,10 @@
         <!-- meta name?-->
     </head>
 
-    <body>
-        <main>
+    <!--Trying to force the content of body to take up 100%, shoves the footer to the bottom-->
+    <body class="d-flex flex-column min-vh-100">
+        <main class="flex-grow-1">
+
             <!--Navbar with htmx, idea from catherine-->
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
@@ -171,5 +173,13 @@
             integrity="sha384-ZsZskKsUsz9vI9J5eEjoMOFGHr5fu+qlJ7Rr5xwM/wae5mWlbY5g1YJc1Nkt0g5n"
             crossorigin="anonymous"
         ></script>
+
+        <!--Footer For License, do we need to link to a place on click-->
+        <footer>
+            <div class="contianer text-center">
+                <p>"Wildfire" icon by Qweather 和风天气 is licensed under CC-BY 4.0.</p>
+            </div>
+        </footer>
+
     </body>
 </html>
