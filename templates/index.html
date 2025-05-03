@@ -1,0 +1,140 @@
+{% extends "base.html" %} {% block content %}
+<main class="flex-grow-1">
+    <!--Navbar with htmx, idea from catherine-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle Navigation"
+            >
+                <span class="navbar-toggle-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <i class="qi-1025"></i>Wildfire Lab
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button
+                            class="nav-link active"
+                            aria-current="page"
+                            hx-get="resources/html/test.html"
+                            hx-trigger="click"
+                            hx-target="#mainContent"
+                            hx-swap="inner-html"
+                        >
+                            Website
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="nav-link active"
+                            aria-current="page"
+                            hx-get="resources/html/team.html"
+                            hx-trigger="click"
+                            hx-target="#mainContent"
+                            hx-swap="inner-html"
+                        >
+                            Team
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="nav-link"
+                            hx-get="resources/html/test.html"
+                            hx-trigger="click"
+                            hx-target="#mainContent"
+                            hx-swap="inner-html"
+                        >
+                            Data
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="nav-link"
+                            hx-get="resources/html/test.html"
+                            hx-trigger="click"
+                            hx-target="#mainContent"
+                            hx-swap="inner-html"
+                        >
+                            wrf
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="nav-link"
+                            hx-get="resources/html/test.html"
+                            hx-trigger="click"
+                            hx-target="#mainContent"
+                            hx-swap="inner-html"
+                        >
+                            s-fire
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="nav-link"
+                            hx-get="resources/html/test.html"
+                            hx-trigger="click"
+                            hx-target="#mainContent"
+                            hx-swap="inner-html"
+                        >
+                            Cloud
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="nav-link"
+                            hx-get="resources/html/test.html"
+                            hx-trigger="click"
+                            hx-target="#mainContent"
+                            hx-swap="inner-html"
+                        >
+                            Deep Learning AI
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="nav-link"
+                            hx-get="resources/html/test.html"
+                            hx-trigger="click"
+                            hx-target="#mainContent"
+                            hx-swap="inner-html"
+                        >
+                            Visualization
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--GET html, we replace the div with the contents-->
+    <div class="container-fluid" id="mainContent">
+        <div
+            hx-get="resources/html/test.html"
+            hx-trigger="load"
+            hx-swap="outerHTML"
+        ></div>
+    </div>
+</main>
+
+<!--Bootstrap functionality-->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ZsZskKsUsz9vI9J5eEjoMOFGHr5fu+qlJ7Rr5xwM/wae5mWlbY5g1YJc1Nkt0g5n"
+    crossorigin="anonymous"
+></script>
+
+<!--Footer For License, do we need to link to a place on click-->
+<footer>
+    <div class="contianer text-center">
+        <p>"Wildfire" icon by Qweather 和风天气 is licensed under CC-BY 4.0.</p>
+    </div>
+</footer>
+{% endblock %}
