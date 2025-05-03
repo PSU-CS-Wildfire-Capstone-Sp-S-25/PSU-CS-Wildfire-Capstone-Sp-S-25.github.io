@@ -5,10 +5,6 @@ use templates::*;
 mod routes;
 use routes::*;
 
-// mod web;
-
-// use web::*;
-
 use anyhow::Context;
 use askama::Template;
 use axum::{
@@ -25,7 +21,7 @@ use std::net::SocketAddr;
 use tokio::{self, net::TcpListener, sync::RwLock};
 use tower_http::{cors, services::ServeDir};
 
-/// Represents the arguments passed to the program.
+/// Represents the arguments passed to the program. TODO add command line args to app :P
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Args {
@@ -54,34 +50,7 @@ async fn main() -> anyhow::Result<()> {
 
     axum::serve(listener, app.into_make_service()).await?;
     Ok(())
-    // axum::Server::bind(&addr)
-    //     .serve(app.into_make_service())
-    //     .await
-    //     .unwrap();
-    // // startup(args.serve).await
 }
-
-// async fn handler() -> Html<&'static str> {
-//     // `std::include_str` macro can be used to include an utf-8 file as `&'static str` in compile
-//     // time. This method is relative to current `main.rs` file.
-//     Html(include_str!("../index.html"))
-// }
-
-// pub async fn startup(ip: String) {
-//     // TODO handle CORS issues? using cors::CorsLayer::new()...
-
-//     // Initializes a new router for the web server app.
-//     // Includes routes for the home page and serving static assets from "/resources".
-//     let app = Router::new()
-//         .route("/", get(handler_index))
-//         // .route(path, method_router)
-//         .nest_service("/resouces", ServeDir::new("resources")) // Serves anything requested from /assets
-//         .fallback(fallback);
-//     // .layer(cors)
-//     let listener = tokio::net::TcpListener::bind(ip.clone()).await.unwrap();
-//     println!("Listening on {}", ip);
-//     axum::serve(listener, app).await.unwrap();
-// }
 
 /// Returns a html document representing a 404 page, and NOT_FOUND status code.
 async fn fallback(uri: Uri) -> Response {
