@@ -10,6 +10,8 @@ dependencies = [
  "askama",
  "axum",
  "clap",
+ "serde",
+ "serde_json",
  "tokio",
  "tower-http",
 ]

@@ -4,6 +4,8 @@ mod templates;
 use templates::*;
 mod routes;
 use routes::*;
+mod profile;
+use profile::*;
 
 use anyhow::Context;
 use askama::Template;
