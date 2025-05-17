@@ -1,9 +1,9 @@
 use crate::*;
 use askama::Template;
 
-#[derive(Template)]
-#[template(path = "index.html")]
-pub struct IndexTemplate;
+use axum::response::{IntoResponse, Response, Html};
+use axum::http::StatusCode;
+
 
 /// A wrapper type that we'll use to encapsulate HTML parsed by askama into valid HTML for axum to serve.
 pub struct HtmlTemplate<T>(pub T);
