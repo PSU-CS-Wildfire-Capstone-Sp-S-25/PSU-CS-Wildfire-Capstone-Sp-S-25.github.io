@@ -1,0 +1,3 @@
+[submodule "wildfire-publishing"]
+	path = wildfire-publishing
+	url = https://github.com/deeptronos/wildfire-publishing.git
