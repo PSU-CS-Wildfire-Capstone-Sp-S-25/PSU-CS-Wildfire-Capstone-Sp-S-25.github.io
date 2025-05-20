@@ -40,7 +40,8 @@ async fn main() -> anyhow::Result<()> {
 
     let app = Router::new()
         .route("/", get(routes::home))
-        .nest_service("/resources", ServeDir::new("resources")) // Serves anything requested from /assets;
+        .nest_service("/resources", ServeDir::new("resources")) // Serves anything requested from /resources
+        .nest_service("/publishing", ServeDir::new("publishing"))
         .fallback(fallback)
         .layer(cors);
 

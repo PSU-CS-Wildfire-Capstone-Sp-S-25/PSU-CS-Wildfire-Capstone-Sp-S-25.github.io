@@ -21,3 +21,10 @@ Please report any bugs in the `#website` channel on our Discord.
 
 
 The website is NOT currently live through GH Pages since it's not ready for the public. If it were, you could access it at [PSU-CS-Wildfire-Capstone-Sp-S-25.github.io](PSU-CS-Wildfire-Capstone-Sp-S-25.github.io)
+
+# Publishing website
+The Wildfire Team's [publishing site](https://github.com/deeptronos/wildfire-publishing) is a submodule of this repository. To build a fresh version of the publishing site for this webserver to deploy, make sure the submodule is installed within your local copy of the repo, then invoke the following from this repo's directory:
+```sh
+zola --root $(pwd)/wildfire-publishing build --output-dir $(pwd)/publishing --force
+```
+## Non-webdev teammembers should only work with the `wildfire-publishing` repository!
