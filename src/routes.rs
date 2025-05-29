@@ -11,3 +11,8 @@ pub async fn home() -> impl IntoResponse {
     let template = IndexTemplate {};
     HtmlTemplate(template)
 }
+
+// pub async fn publishing -> impl IntoResponse{
+//     let template = IndexTemplate{};
+
+// }
